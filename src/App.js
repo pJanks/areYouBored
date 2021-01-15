@@ -1,5 +1,6 @@
 import './App.css'
 import styled from 'styled-components'
+import { Header } from './components/Header/Header'
 
 const StyledAppWrapper = styled.div`
   color: blue;
@@ -9,7 +10,7 @@ const StyledAppWrapper = styled.div`
 const App = () => {
   return (
     <StyledAppWrapper>
-      Hello World ! ! !
+      <Header />
     </StyledAppWrapper>
   )
 }
