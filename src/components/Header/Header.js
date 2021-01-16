@@ -51,7 +51,7 @@ const StyledHeaderText = styled.h1`
 export const Header = () => {
   return(
     <StyledHeader>
-      <StyledLogo />
+      <StyledLogo tabIndex='0' /> 
       <StyledHeaderText>Are you Bored?!</StyledHeaderText>
     </StyledHeader>
   )
