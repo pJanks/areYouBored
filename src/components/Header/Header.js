@@ -44,7 +44,7 @@ const StyledLogo = styled.div`
 const StyledHeaderText = styled.h1`
   background: none;
   color: #FFF;
-  font-size: 100%;
+  font-size: 330%;
   font-weight: 100;
   text-align: center;
   width: 100%;
