@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Header } from './components/Header/Header'
+import { ActivityCard } from './components/ActivityCard/ActivityCard'
 import './App.css'
 
 const StyledAppWrapper = styled.div`
-  color: blue;
-  font-size: 300%;
 `
 
 
@@ -21,6 +20,7 @@ const App =  () => {
   return (
     <StyledAppWrapper>
       <Header />
+      <ActivityCard props={activity} />
     </StyledAppWrapper>
   )
 }
