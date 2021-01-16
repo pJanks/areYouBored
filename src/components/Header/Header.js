@@ -2,19 +2,22 @@ import styled, { keyframes } from 'styled-components'
 
 const LogoPalette = keyframes`
   0% {
-    background: #ee6055;
+    background: red;
   }
-  25% {
-    background: #60d394;
+  20% {
+    background: orange;
   }
-  50% {
-    background: #aaf683;
+  40% {
+    background: yellow;
   }
-  75% {
-    background: #ffd97d;
+  60% {
+    background: green;
+  }
+  80% {
+    background: blue;
   }
   100% {
-    background: #ff9b85;
+    background: violet;
   }
 ` 
 
@@ -23,16 +26,16 @@ const StyledHeader = styled.header`
   border-bottom: 6px double #FFF;
   display: flex;
   height: 80px;
-  padding: 2%;
+  padding: 1%;
   width: 100%;
 `
 
 const StyledLogo = styled.div`
   animation-name: ${LogoPalette};
-  animation-duration: 5s;
+  animation-duration: .8s;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  border-radius: 100%;
+  border-radius: 13px;
   height: 55px;
   width: 55px;
 `
