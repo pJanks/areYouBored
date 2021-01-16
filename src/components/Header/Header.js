@@ -1,3 +1,4 @@
+import { SocialMediaLinks } from '../SocialMediaLinks/SocialMediaLinks'
 import styled, { keyframes } from 'styled-components'
 
 const LogoPalette = keyframes`
@@ -25,8 +26,8 @@ const StyledHeader = styled.header`
   align-items: center;
   border-bottom: 6px double #FFF;
   display: flex;
-  height: 80px;
-  padding: 1%;
+  height: 90px;
+  padding: 2%;
   width: 100%;
 `
 
@@ -37,12 +38,13 @@ const StyledLogo = styled.div`
   animation-direction: normal;
   border-radius: 13px;
   height: 55px;
-  width: 55px;
+  width: 65px;
 `
 
 const StyledHeaderText = styled.h1`
+  background: none;
   color: #FFF;
-  font-size: 100%;
+  font-size: 330%;
   font-weight: 100;
   text-align: center;
   width: 100%;
@@ -53,6 +55,7 @@ export const Header = () => {
     <StyledHeader>
       <StyledLogo tabIndex='0' /> 
       <StyledHeaderText>Are you Bored?!</StyledHeaderText>
+      <SocialMediaLinks />
     </StyledHeader>
   )
 }
