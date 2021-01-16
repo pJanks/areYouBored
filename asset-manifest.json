@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/areYouBored/static/css/main.9160b092.chunk.css",
+    "main.js": "/areYouBored/static/js/main.4909c324.chunk.js",
+    "main.js.map": "/areYouBored/static/js/main.4909c324.chunk.js.map",
+    "runtime-main.js": "/areYouBored/static/js/runtime-main.22eb35cb.js",
+    "runtime-main.js.map": "/areYouBored/static/js/runtime-main.22eb35cb.js.map",
+    "static/js/2.cc89926e.chunk.js": "/areYouBored/static/js/2.cc89926e.chunk.js",
+    "static/js/2.cc89926e.chunk.js.map": "/areYouBored/static/js/2.cc89926e.chunk.js.map",
+    "index.html": "/areYouBored/index.html",
+    "static/css/main.9160b092.chunk.css.map": "/areYouBored/static/css/main.9160b092.chunk.css.map",
+    "static/js/2.cc89926e.chunk.js.LICENSE.txt": "/areYouBored/static/js/2.cc89926e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.22eb35cb.js",
+    "static/js/2.cc89926e.chunk.js",
+    "static/css/main.9160b092.chunk.css",
+    "static/js/main.4909c324.chunk.js"
+  ]
+}
