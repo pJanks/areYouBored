@@ -31,6 +31,11 @@ const StyledActivityInfo = styled.h3`
   text-transform: capitalize;
 `
 
+const StyledLink = styled.a`
+  background: none;
+  color: blue;
+`
+
 export const ActivityCard = ({ props }) => {
 
 
@@ -40,6 +45,7 @@ export const ActivityCard = ({ props }) => {
         <StyledActivityHeader>Activity: {props.activity}</StyledActivityHeader>
         <StyledActivityInfo>Activity Type: {props.type}</StyledActivityInfo>
         <StyledActivityInfo>Participants: {props.participants}</StyledActivityInfo>
+        {props.link ? <StyledActivityInfo>Link: <StyledLink href={props.link}>{props.link}</StyledLink></StyledActivityInfo> : null}
       </StyledCard>
     </StyledCardWrapper>
   ) : <h1>LOADING . . .</h1>
@@ -54,3 +60,7 @@ export const ActivityCard = ({ props }) => {
 //   "key": "8238918",
 //   "accessibility": 0.7
 // }
+
+// dropdown to filter type and button to search
+// free activity button
+// random activity button
