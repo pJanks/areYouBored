@@ -1,66 +1,17 @@
-import styled from 'styled-components'
+import { NewActivityForm } from '../NewActivityForm/NewActivityForm'
+import { Loader } from '../Loader/Loader'
+import { StyledCardWrapper, StyledCard, StyledActivityHeader, StyledActivityInfo, StyledLink } from './ActivityCardStyledComponents'
 
-const StyledCardWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`
-
-const StyledCard = styled.section`
-  align-items: left;
-  background-color: #FFF;
-  border-radius: 20px;
-  box-shadow: 0 4px 13px 0 #FFF;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  justify-content: center;
-  margin: 10%;
-  padding: 3%;
-  width: 85%;
-`
-
-const StyledActivityHeader = styled.h4`
-  background: none;
-  font-size: 130%;
-`
-
-const StyledActivityInfo = styled.h3`
-  background: none;
-  font-weight: 400;
-  text-transform: capitalize;
-`
-
-const StyledLink = styled.a`
-  background: none;
-  color: blue;
-`
-
-export const ActivityCard = ({ props }) => {
-
-
-  return props.activity ? (
+export const ActivityCard = ({ currentActivity, setActivity }) => {
+  return currentActivity.activity ? (
     <StyledCardWrapper>
       <StyledCard>
-        <StyledActivityHeader>Activity: {props.activity}</StyledActivityHeader>
-        <StyledActivityInfo>Activity Type: {props.type}</StyledActivityInfo>
-        <StyledActivityInfo>Participants: {props.participants}</StyledActivityInfo>
-        {props.link ? <StyledActivityInfo>Link: <StyledLink href={props.link}>{props.link}</StyledLink></StyledActivityInfo> : null}
+        <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
+        <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
+        <StyledActivityInfo>Participants: {currentActivity.participants}</StyledActivityInfo>
+        {currentActivity.link ? <StyledActivityInfo>Link: <StyledLink href={currentActivity.link}>{currentActivity.link}</StyledLink></StyledActivityInfo> : null}
+        <NewActivityForm setActivity={setActivity} />
       </StyledCard>
     </StyledCardWrapper>
-  ) : <h1>LOADING . . .</h1>
+  ) : <Loader />
 }
-
-// {
-//   "activity": "Visit your past teachers",
-//   "type": "social",
-//   "participants": 1,
-//   "price": 0,
-//   "link": "",
-//   "key": "8238918",
-//   "accessibility": 0.7
-// }
-
-// dropdown to filter type and button to search
-// free activity button
-// random activity button
