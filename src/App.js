@@ -7,6 +7,7 @@ import './App.css'
 const App =  () => {
   const [activity, setActivity] = useState({})
   const [displayAboutInfo, setDisplayAboutInfo] = useState('none')
+  const [isAboutInfoActive, setIsAboutInfoActive] = useState(false)
 
   useEffect(() => {
     fetch('http://www.boredapi.com/api/activity')
@@ -16,8 +17,8 @@ const App =  () => {
 
   return (
     <div>
-      <Header />
-      <ActivityCard currentActivity={activity} setActivity={setActivity} />
+      <Header setIsAboutInfoActive={setIsAboutInfoActive} />
+      <ActivityCard currentActivity={activity} setActivity={setActivity} isAboutInfoActive={isAboutInfoActive} setIsAboutInfoActive={setIsAboutInfoActive} />
     </div>
   )
 }
