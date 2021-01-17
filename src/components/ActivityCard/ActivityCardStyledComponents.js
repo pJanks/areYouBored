@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StyledCardWrapper = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
 `
 
@@ -35,6 +36,7 @@ export const StyledActivityInfo = styled.h3`
 
 export const StyledLink = styled.a`
   background: none;
-  color: blue;
+  color: #6666FF;
+  font-weight: 700;
   margin: 2%;
 `
