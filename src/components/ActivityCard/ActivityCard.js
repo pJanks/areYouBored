@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import { NewActivityForm } from '../NewActivityForm/NewActivityForm'
 import { Loader } from '../Loader/Loader'
+import { AboutInfo } from '../AboutInfo/AboutInfo'
 import { StyledCardWrapper, StyledCard, StyledActivityHeader, StyledActivityInfo, StyledLink } from './ActivityCardStyledComponents'
 
-export const ActivityCard = ({ currentActivity, setActivity }) => {
+export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, setIsAboutInfoActive }) => {
+
   return currentActivity.activity ? (
     <StyledCardWrapper>
+      {isAboutInfoActive ? <AboutInfo setIsAboutInfoActive={setIsAboutInfoActive} /> : null}
       <StyledCard>
         <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
         <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>

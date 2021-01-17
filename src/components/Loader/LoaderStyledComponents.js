@@ -20,10 +20,10 @@ export const LoaderWrapper = styled.div`
 export const Spinner = styled.div`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
-  border-top: 2px solid grey;
-  border-right: 2px solid grey;
-  border-bottom: 2px solid grey;
-  border-left: 4px solid black;
+  border-top: 9px solid #808080;
+  border-right: 9px solid #808080;
+  border-bottom: 9px solid #808080;
+  border-left: 18px solid #000;
   background: transparent;
   width: 100px;
   height: 100px;
