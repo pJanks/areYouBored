@@ -1,23 +1,7 @@
 import gitHubIcon from '../../images/github_icon.png'
 import twitterIcon from '../../images/twitter_icon.png'
 import linkedInIcon from '../../images/linkedin_icon.png'
-import styled from 'styled-components'
-
-const StyledIcon = styled.img`
-  height: 30px;
-  width: 30px;
-
-  &:hover {
-    height: 40px;
-    width: 40px;
-  }
-`
-
-const StyledIconWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 15%;
-`
+import { StyledIconWrapper, StyledIcon } from './SocialMediaLinksStyledCompents'
 
 export const SocialMediaLinks = () => {
   return(

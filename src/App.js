@@ -20,7 +20,7 @@ const App =  () => {
   return (
     <StyledAppWrapper>
       <Header />
-      <ActivityCard props={activity} />
+      <ActivityCard currentActivity={activity} setActivity={setActivity} />
     </StyledAppWrapper>
   )
 }
