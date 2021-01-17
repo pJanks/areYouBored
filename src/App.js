@@ -6,7 +6,6 @@ import './App.css'
 
 const App =  () => {
   const [activity, setActivity] = useState({})
-  const [displayAboutInfo, setDisplayAboutInfo] = useState('none')
   const [isAboutInfoActive, setIsAboutInfoActive] = useState(false)
 
   useEffect(() => {
