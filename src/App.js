@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { Header } from './components/Header/Header'
 import { ActivityCard } from './components/ActivityCard/ActivityCard'
 import './App.css'
@@ -12,6 +11,7 @@ const App =  () => {
     fetch('http://www.boredapi.com/api/activity')
       .then(response => response.json())
       .then(json => setActivity(json))
+      .catch(err => console.log(err))
   }, [])
 
   return (

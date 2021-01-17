@@ -6,9 +6,10 @@ import { StyledCardWrapper, StyledCard, StyledActivityHeader, StyledActivityInfo
 
 export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, setIsAboutInfoActive }) => {
 
-  return currentActivity.activity ? (
-    <StyledCardWrapper>
-      {isAboutInfoActive ? <AboutInfo setIsAboutInfoActive={setIsAboutInfoActive} /> : null}
+  if (isAboutInfoActive) {
+    return(
+      <StyledCardWrapper>
+      <AboutInfo setIsAboutInfoActive={setIsAboutInfoActive} />
       <StyledCard>
         <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
         <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
@@ -17,5 +18,18 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
         <NewActivityForm setActivity={setActivity} />
       </StyledCard>
     </StyledCardWrapper>
-  ) : <Loader />
+    )
+  } else {
+    return (currentActivity.activity) ? (
+      <StyledCardWrapper>
+        <StyledCard>
+          <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
+          <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
+          <StyledActivityInfo>Participants: {currentActivity.participants}</StyledActivityInfo>
+          {currentActivity.link ? <StyledActivityInfo>Link: <StyledLink href={currentActivity.link}>{currentActivity.link}</StyledLink></StyledActivityInfo> : null}
+          <NewActivityForm setActivity={setActivity} />
+        </StyledCard>
+      </StyledCardWrapper>
+    ) : <Loader />
+  }
 }
