@@ -40,10 +40,14 @@ export const StyledLogo = styled.button`
   border-radius: 13px;
   display: flex;
   font-size: 100%;
-  font-weight: bold;
+  font-weight: 700;
   height: 65px;
   justify-content: center;
   width: 65px;
+
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 export const StyledHeaderText = styled.h1`

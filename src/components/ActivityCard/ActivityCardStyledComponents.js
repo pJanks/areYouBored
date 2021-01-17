@@ -13,11 +13,11 @@ export const StyledCard = styled.section`
   box-shadow: 0 4px 13px 0 #FFF;
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 470px;
   justify-content: center;
-  margin: 10%;
-  padding: 3%;
-  width: 85%;
+  margin: 2%;
+  padding: 12%;
+  width: 88%;
 `
 
 export const StyledActivityHeader = styled.h4`
