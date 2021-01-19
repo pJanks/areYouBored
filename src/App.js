@@ -8,7 +8,7 @@ const App =  () => {
   const [isAboutInfoActive, setIsAboutInfoActive] = useState(false)
 
   useEffect(() => {
-    fetch('https://www.boredapi.com/api/activity')
+    fetch('http://www.boredapi.com/api/activity')
       .then(response => response.json())
       .then(json => setActivity(json))
       .catch(err => console.log(err))
