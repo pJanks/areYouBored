@@ -14,7 +14,7 @@ export const StyledCard = styled.section`
   box-shadow: 0 4px 13px 0 #FFF;
   display: flex;
   flex-direction: column;
-  height: 470px;
+  height: 600px;
   justify-content: center;
   margin: 2%;
   padding: 12%;
@@ -36,7 +36,6 @@ export const StyledFavoriteInactiveIcon = styled.img`
 
 export const StyledFavoriteActiveIcon = styled.img`
   background-color: #FFF;
-  display: none;
   height: 50px;
   width: 50px;
 `
