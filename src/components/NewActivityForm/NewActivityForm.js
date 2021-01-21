@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { StyledForm, StyledError, StyledDropdown, StyledButton } from './NewActivityFormStyledComponents'
 
-export const NewActivityForm = ({ setActivity }) => {
+export const NewActivityForm = ({ setActivity, currentActivity, setIsFavorite }) => {
   const [selectedActivityType, setSelectedActivityType] = useState('')
   const [error, setError] = useState('')
 
@@ -9,7 +9,11 @@ export const NewActivityForm = ({ setActivity }) => {
     e.preventDefault()
     fetch('http://www.boredapi.com/api/activity')
       .then(response => response.json())
-      .then(json => setActivity(json))
+      .then(json => {
+        setError('')
+        setActivity(json)
+        checkIfFavorited(json)
+      })
       .catch(err => setError(`There was an error: ${err}`))
   }
   
@@ -17,7 +21,11 @@ export const NewActivityForm = ({ setActivity }) => {
     e.preventDefault()
     fetch('http://www.boredapi.com/api/activity?price=0.0')
       .then(response => response.json())
-      .then(json => setActivity(json))
+      .then(json => {
+        setError('')
+        setActivity(json)
+        checkIfFavorited(json)
+      })
       .catch(err => setError(`There was an error: ${err}`))
   }
   
@@ -27,15 +35,25 @@ export const NewActivityForm = ({ setActivity }) => {
       fetch(`http://www.boredapi.com/api/activity?type=${selectedActivityType}`)
       .then(response => response.json())
       .then(json => {
-          setError('')
-          setActivity(json)
-        })
+        setError('')
+        setActivity(json)
+        checkIfFavorited(json)
+      })
       .catch(err => setError(`There was an error: ${err}`))
     ) : setError('You must select an activity type first!')
   }
 
   const handleSelectValueChange = (e) => {
     setSelectedActivityType(e.target.value)
+  }
+
+  const checkIfFavorited = (activity) => {
+    const foundItem = JSON.parse(localStorage.getItem(activity.key))
+    if (foundItem) {
+      setIsFavorite(true)
+    } else {
+      setIsFavorite(false)
+    }
   }
 
   return(
