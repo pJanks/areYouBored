@@ -36,10 +36,6 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
     localStorage.removeItem(key)
     setAllFavorites(updatedKeys)
   }
-
-  const handleClicker = () => {
-    setIsViewFavoritesActive(false)
-  }
   
   useEffect(() => {
     checkLocalStorage()
@@ -61,7 +57,7 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
         <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
         <StyledActivityInfo>Participants: {currentActivity.participants}</StyledActivityInfo>
         {currentActivity.link ? <StyledActivityInfo>Link: <StyledLink href={currentActivity.link}>{currentActivity.link}</StyledLink></StyledActivityInfo> : null}
-        <NewActivityForm setActivity={setActivity} />
+        <NewActivityForm setActivity={setActivity} currentActivity={currentActivity} setIsFavorite={setIsFavorite} />
       </StyledCard>
     </StyledCardWrapper>
     )
@@ -81,7 +77,7 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
                 <StyledActivityInfo>Activity Type: {favoriteItem.type === 'diy' ? `${favoriteItem.type.toUpperCase().split('').join('.')}.` : favoriteItem.type}</StyledActivityInfo>
                 <StyledActivityInfo>Participants: {favoriteItem.participants}</StyledActivityInfo>
                 {favoriteItem.link ? <StyledActivityInfo>Link: <StyledLink href={favoriteItem.link}>{favoriteItem.link}</StyledLink></StyledActivityInfo> : null}
-                <NewActivityForm setActivity={setActivity} />
+                <NewActivityForm setActivity={setActivity} currentActivity={currentActivity} setIsFavorite={setIsFavorite} />
               </StyledCard>
             </StyledCardWrapper>
           )
@@ -105,7 +101,7 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
           <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
           <StyledActivityInfo>Participants: {currentActivity.participants}</StyledActivityInfo>
           {currentActivity.link ? <StyledActivityInfo>Link: <StyledLink href={currentActivity.link}>{currentActivity.link}</StyledLink></StyledActivityInfo> : null}
-          <NewActivityForm setActivity={setActivity} />
+          <NewActivityForm setActivity={setActivity} currentActivity={currentActivity} setIsFavorite={setIsFavorite} />
         </StyledCard>
       </StyledCardWrapper>
     ) : <Loader />
