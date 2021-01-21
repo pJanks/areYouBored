@@ -16,23 +16,22 @@ const App =  () => {
   const [activity, setActivity] = useState({})
   const [isAboutInfoActive, setIsAboutInfoActive] = useState(false)
   const [isViewFavoritesActive, setIsViewFavoritesActive] = useState(false)
-  const [error, setError] = useState('')
+  const [appError, setAppError] = useState('')
 
   useEffect(() => {
     fetch('http://www.boredapi.com/api/activity')
-    // fetch('http://www.boredapi.com/api/activity?key=3621244')
       .then(response => response.json())
       .then(json => setActivity(json))
-      .catch(err => setError(err))
-  }, [error])
+      .catch(err => setAppError(err))
+  }, [appError])
 
   return (
     <div>
       <Header isViewFavoritesActive={isViewFavoritesActive} setIsViewFavoritesActive={setIsViewFavoritesActive} setIsAboutInfoActive={setIsAboutInfoActive} />
-      {error ? (
-        <StyledErrorMessage>There was an error: {error}</StyledErrorMessage>
+      {appError ? (
+        <StyledErrorMessage>There was an error: {appError}</StyledErrorMessage>
       ) : (
-        <ActivityCard currentActivity={activity} setActivity={setActivity} isAboutInfoActive={isAboutInfoActive} setIsAboutInfoActive={setIsAboutInfoActive} isViewFavoritesActive={isViewFavoritesActive} setIsViewFavoritesActive={setIsViewFavoritesActive} />
+        <ActivityCard appError={appError} currentActivity={activity} setActivity={setActivity} isAboutInfoActive={isAboutInfoActive} setIsAboutInfoActive={setIsAboutInfoActive} isViewFavoritesActive={isViewFavoritesActive} setIsViewFavoritesActive={setIsViewFavoritesActive} />
       )}
     </div>
   )
