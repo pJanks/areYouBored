@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyledForm, StyledLabel, StyledError, StyledDropdown, StyledOption, StyledButton } from './NewActivityFormStyledComponents'
+import { StyledForm, StyledError, StyledDropdown, StyledButton } from './NewActivityFormStyledComponents'
 
 export const NewActivityForm = ({ setActivity }) => {
   const [selectedActivityType, setSelectedActivityType] = useState('')
@@ -10,6 +10,7 @@ export const NewActivityForm = ({ setActivity }) => {
     fetch('http://www.boredapi.com/api/activity')
       .then(response => response.json())
       .then(json => setActivity(json))
+      .catch(err => setError(`There was an error: ${err}`))
   }
   
   const handleFreeRandomActivityButtonClick = (e) => {
@@ -17,6 +18,7 @@ export const NewActivityForm = ({ setActivity }) => {
     fetch('http://www.boredapi.com/api/activity?price=0.0')
       .then(response => response.json())
       .then(json => setActivity(json))
+      .catch(err => setError(`There was an error: ${err}`))
   }
   
   const handleFilterByTypeButtonClick = (e) => {
@@ -28,6 +30,7 @@ export const NewActivityForm = ({ setActivity }) => {
           setError('')
           setActivity(json)
         })
+      .catch(err => setError(`There was an error: ${err}`))
     ) : setError('You must select an activity type first!')
   }
 
@@ -37,23 +40,23 @@ export const NewActivityForm = ({ setActivity }) => {
 
   return(
     <StyledForm>
-      <StyledLabel htmlFor='activity-type'></StyledLabel>
+      <label htmlFor='activity-type'></label>
       <StyledError>{error}</StyledError>
       <StyledDropdown
         id='activity-type'
         defaultValue='Select Activity Type'
         onChange={(e) => handleSelectValueChange(e)}
         name='activity-type'>
-        <StyledOption value="Select Activity Type" disabled hidden>Select Activity Type</StyledOption>
-        <StyledOption value='busywork'>Busywork</StyledOption>
-        <StyledOption value='charity'>Charity</StyledOption>
-        <StyledOption value='cooking'>Cooking</StyledOption>
-        <StyledOption value='diy'>DIY</StyledOption>
-        <StyledOption value='education'>Education</StyledOption>
-        <StyledOption value='music'>Music</StyledOption>
-        <StyledOption value='recreational'>Recreational</StyledOption>
-        <StyledOption value='relaxation'>Relaxation</StyledOption>
-        <StyledOption value='social'>Social</StyledOption>
+        <option value="Select Activity Type" disabled hidden>Select Activity Type</option>
+        <option value='busywork'>Busywork</option>
+        <option value='charity'>Charity</option>
+        <option value='cooking'>Cooking</option>
+        <option value='diy'>DIY</option>
+        <option value='education'>Education</option>
+        <option value='music'>Music</option>
+        <option value='recreational'>Recreational</option>
+        <option value='relaxation'>Relaxation</option>
+        <option value='social'>Social</option>
       </StyledDropdown>
       <StyledButton type='button' onClick={(e) => handleFilterByTypeButtonClick(e)}>Get Random Activity by Type</StyledButton>
       <StyledButton type='button' onClick={(e) => handleRandomActivityButtonClick(e)}>Get Random Activity</StyledButton>
