@@ -1,14 +1,38 @@
 import favoriteInactiveIcon from '../../images/favorite_inactive.png'
 import favoriteActiveIcon from '../../images/favorite_active.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NewActivityForm } from '../NewActivityForm/NewActivityForm'
 import { Loader } from '../Loader/Loader'
 import { AboutInfo } from '../AboutInfo/AboutInfo'
 import { StyledFavoriteIconWrapper, StyledFavoriteActiveIcon, StyledFavoriteInactiveIcon, StyledCardWrapper, StyledCard, StyledActivityHeader, StyledActivityInfo, StyledLink } from './ActivityCardStyledComponents'
 
 export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, setIsAboutInfoActive }) => {
-  const handleFavoriteButtonClicks = () => {
-    
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  const updateLocalStorage = () => {
+    localStorage.setItem(currentActivity.key, JSON.stringify(currentActivity))
+  }
+
+  const checkLocalStorage = () => {
+    const activityFromStorage = JSON.parse(localStorage.getItem(currentActivity.key))
+    if (activityFromStorage) {
+      setIsFavorite(activityFromStorage.isFavorite)
+    }
+  }
+
+  useEffect(() => {
+    checkLocalStorage()
+  })
+
+  const handleFavoriteButtonClick = () => {
+    if (!isFavorite) {
+      setIsFavorite(true)
+      currentActivity.isFavorite = true
+    } else {
+      setIsFavorite(false)
+      currentActivity.isFavorite = false
+    }
+    updateLocalStorage()
   }
 
   if (isAboutInfoActive) {
@@ -17,8 +41,11 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
       <AboutInfo setIsAboutInfoActive={setIsAboutInfoActive} />
       <StyledCard>
         <StyledFavoriteIconWrapper>
-          <StyledFavoriteInactiveIcon tabIndex='0' alt='Click to favorite activity' src={favoriteInactiveIcon} />
-          <StyledFavoriteActiveIcon tabIndex='0' alt='Click to unfavorite activity' src={favoriteActiveIcon} />
+          {isFavorite ? (
+            <StyledFavoriteActiveIcon onClick={handleFavoriteButtonClick} tabIndex='0' alt='Click to unfavorite activity' src={favoriteActiveIcon} />
+          ) : (
+            <StyledFavoriteInactiveIcon onClick={handleFavoriteButtonClick} tabIndex='0' alt='Click to favorite activity' src={favoriteInactiveIcon} />
+          )}
         </StyledFavoriteIconWrapper>
         <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
         <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
@@ -33,8 +60,11 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
       <StyledCardWrapper>
         <StyledCard>
           <StyledFavoriteIconWrapper>
-            <StyledFavoriteInactiveIcon tabIndex='0' alt='Click to favorite activity' src={favoriteInactiveIcon} />
-            <StyledFavoriteActiveIcon tabIndex='0' alt='Click to unfavorite activity' src={favoriteActiveIcon} />
+            {isFavorite ? (
+              <StyledFavoriteActiveIcon onClick={handleFavoriteButtonClick} tabIndex='0' alt='Click to unfavorite activity' src={favoriteActiveIcon} />
+            ) : (
+              <StyledFavoriteInactiveIcon onClick={handleFavoriteButtonClick} tabIndex='0' alt='Click to favorite activity' src={favoriteInactiveIcon} />
+            )}
           </StyledFavoriteIconWrapper>
           <StyledActivityHeader>Activity: {currentActivity.activity}</StyledActivityHeader>
           <StyledActivityInfo>Activity Type: {currentActivity.type === 'diy' ? `${currentActivity.type.toUpperCase().split('').join('.')}.` : currentActivity.type}</StyledActivityInfo>
