@@ -34,15 +34,18 @@ export const StyledNavButton = styled.button`
   align-items: center;
   background-color: #FFF;
   border: none;
-  border-radius: 13px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 #FFF;
   display: flex;
   font-size: 100%;
   font-weight: 700;
   height: 70px;
   justify-content: center;
+  margin-right: 40px;
   width: 85px;
 
   &:hover{
+    box-shadow: 0 8px 20px 0 #FFF;
     cursor: pointer;
   }
 `
