@@ -6,6 +6,7 @@ export const StyledForm = styled.form`
   background-color: inherit;
   display: flex;
   flex-direction: column;
+  height: auto;
   justify-content: center;
   text-align: center;
 `
@@ -19,35 +20,42 @@ export const StyledError = styled.span`
 `
 
 export const StyledButton = styled.button`
+  align-items: center;
   background-color: #E8F9E3;
-  border-radius: 100px;
+  border: none;
+  border-radius: 13px;
   box-shadow: 0 4px 13px 0 #000;
+  display: flex;
+  font-size: 110%;
   font-weight: 700;
-  margin: 1%;
-  padding: 1%;
+  height: 45px;
+  justify-content: center;
+  margin: 15px;
+  padding: 13px;
+  text-align: center;
   width: 40%;
+
+  &:hover {
+    box-shadow: 0 8px 26px 0 #000;
+    font-size: 130%;
+    height: 55px;
+  }
 `
 
 export const StyledDropdown = styled.select`
   background-color: #E8F9E3;
-  border-radius: 100px;
+  border-radius: 13px;
   box-shadow: 0 4px 13px 0 #000;
+  font-size: 110%;
   font-weight: 700;
-  margin: 1%;
+  height: 45px;
+  margin: 15px;
   padding: 1%;
   width: 40%;
-`
 
-export const StyledOption = styled.option`
-  background-color: #E8F9E3;
-  border-radius: 100px;
-  box-shadow: 0 4px 13px 0 #000;
-  font-weight: 700;
-  margin: 1%;
-  padding: 1%;
-  width: 40%;
-`
-
-export const StyledLabel = styled.label`
-  display: none;
+  &:hover {
+    box-shadow: 0 8px 26px 0 #000;
+    font-size: 120%;
+    height: 55px;
+  }
 `
