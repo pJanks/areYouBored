@@ -1,17 +1,21 @@
 import styled from 'styled-components'
 
 export const StyledIcon = styled.img`
-  height: 30px;
-  width: 30px;
+  border-radius: 100px;
+  box-shadow: 0 2px 10px 0 #FFF;
+  height: 40px;
+  width: 40px;
 
   &:hover {
-    height: 40px;
-    width: 40px;
+    box-shadow: 0 8px 20px 0 #FFF;
+    height: 45px;
+    width: 45px;
   }
 `
 
 export const StyledIconWrapper = styled.div`
   display: flex;
+  height: 45px;
   justify-content: space-between;
-  width: 15%;
+  width: 20%;
 `

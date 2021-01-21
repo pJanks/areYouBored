@@ -1,23 +1,23 @@
 import styled, { keyframes } from 'styled-components'
 
-const LogoPalette = keyframes`
+const HeaderTextPalette = keyframes`
   0% {
-    background: red;
+    color: red;
   }
   20% {
-    background: orange;
+    color: orange;
   }
   40% {
-    background: yellow;
+    color: yellow;
   }
   60% {
-    background: green;
+    color: green;
   }
   80% {
-    background: blue;
+    color: blue;
   }
   100% {
-    background: violet;
+    color: violet;
   }
 ` 
 
@@ -30,31 +30,42 @@ export const StyledHeader = styled.header`
   width: 100%;
 `
 
-export const StyledLogo = styled.button`
+export const StyledNavButton = styled.button`
   align-items: center;
-  animation-name: ${LogoPalette};
-  animation-duration: .8s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
+  background-color: #FFF;
   border: none;
-  border-radius: 13px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 #FFF;
   display: flex;
   font-size: 100%;
   font-weight: 700;
-  height: 65px;
+  height: 70px;
   justify-content: center;
-  width: 65px;
+  margin-right: 40px;
+  width: 85px;
 
   &:hover{
+    box-shadow: 0 8px 20px 0 #FFF;
     cursor: pointer;
   }
 `
 
+export const StyledLinksWrapper = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+`
+
+
 export const StyledHeaderText = styled.h1`
+  animation-name: ${HeaderTextPalette};
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
   background: none;
   color: #FFF;
   font-size: 330%;
-  font-weight: 100;
+  font-weight: 200;
   text-align: center;
   width: 100%;
 `
