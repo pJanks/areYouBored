@@ -25,7 +25,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   border-bottom: 6px double #FFF;
   display: flex;
-  height: 90px;
+  height: 115px;
   padding: 2%;
   width: 100%;
 `
