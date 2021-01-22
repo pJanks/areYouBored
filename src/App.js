@@ -12,7 +12,7 @@ const StyledErrorMessage = styled.span`
   margin: 60px;
 `
 
-const App =  () => {
+export const App =  () => {
   const [activity, setActivity] = useState({})
   const [isAboutInfoActive, setIsAboutInfoActive] = useState(false)
   const [isViewFavoritesActive, setIsViewFavoritesActive] = useState(false)
