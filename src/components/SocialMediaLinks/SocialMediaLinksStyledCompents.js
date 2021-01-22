@@ -17,5 +17,5 @@ export const StyledIconWrapper = styled.div`
   display: flex;
   height: 45px;
   justify-content: space-between;
-  width: 20%;
+  width: 25%;
 `
