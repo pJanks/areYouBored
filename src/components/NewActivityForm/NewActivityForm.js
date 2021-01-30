@@ -65,16 +65,16 @@ export const NewActivityForm = ({ setActivity, currentActivity, setIsFavorite })
         defaultValue='Select Activity Type'
         onChange={(e) => handleSelectValueChange(e)}
         name='activity-type'>
-        <option value="Select Activity Type" disabled hidden>Select Activity Type</option>
-        <option value='busywork'>Busywork</option>
-        <option value='charity'>Charity</option>
-        <option value='cooking'>Cooking</option>
-        <option value='diy'>DIY</option>
-        <option value='education'>Education</option>
-        <option value='music'>Music</option>
-        <option value='recreational'>Recreational</option>
-        <option value='relaxation'>Relaxation</option>
-        <option value='social'>Social</option>
+          <option value="Select Activity Type" disabled hidden>Select Activity Type</option>
+          <option value='busywork'>Busywork</option>
+          <option value='charity'>Charity</option>
+          <option value='cooking'>Cooking</option>
+          <option value='diy'>DIY</option>
+          <option value='education'>Education</option>
+          <option value='music'>Music</option>
+          <option value='recreational'>Recreational</option>
+          <option value='relaxation'>Relaxation</option>
+          <option value='social'>Social</option>
       </StyledDropdown>
       <StyledButton type='button' onClick={(e) => handleFilterByTypeButtonClick(e)}>Get Random Activity by Type</StyledButton>
       <StyledButton type='button' onClick={(e) => handleRandomActivityButtonClick(e)}>Get Random Activity</StyledButton>
