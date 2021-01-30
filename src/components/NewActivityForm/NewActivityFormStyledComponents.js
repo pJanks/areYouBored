@@ -28,7 +28,7 @@ export const StyledButton = styled.button`
   display: flex;
   font-size: 110%;
   font-weight: 700;
-  height: 50px;
+  height: 40px;
   justify-content: center;
   margin: 15px;
   padding: 13px;
@@ -41,17 +41,13 @@ export const StyledButton = styled.button`
   }
 `
 
-export const StyledFormElementWrapper = styled.div`
-
-`
-
 export const StyledDropdown = styled.select`
   background-color: #E8F9E3;
   border-radius: 13px;
   box-shadow: 0 4px 13px 0 #000;
   font-size: 110%;
   font-weight: 700;
-  height: 50px;
+  height: 40px;
   margin: 15px;
   padding: 1%;
   width: 40%;
