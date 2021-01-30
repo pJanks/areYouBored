@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/feelingBored/static/css/main.6156c797.chunk.css",
-    "main.js": "/feelingBored/static/js/main.4f524154.chunk.js",
-    "main.js.map": "/feelingBored/static/js/main.4f524154.chunk.js.map",
+    "main.css": "/feelingBored/static/css/main.bf3ec131.chunk.css",
+    "main.js": "/feelingBored/static/js/main.a8adf776.chunk.js",
+    "main.js.map": "/feelingBored/static/js/main.a8adf776.chunk.js.map",
     "runtime-main.js": "/feelingBored/static/js/runtime-main.a4b910e1.js",
     "runtime-main.js.map": "/feelingBored/static/js/runtime-main.a4b910e1.js.map",
     "static/js/2.c2fc9749.chunk.js": "/feelingBored/static/js/2.c2fc9749.chunk.js",
     "static/js/2.c2fc9749.chunk.js.map": "/feelingBored/static/js/2.c2fc9749.chunk.js.map",
     "index.html": "/feelingBored/index.html",
-    "static/css/main.6156c797.chunk.css.map": "/feelingBored/static/css/main.6156c797.chunk.css.map",
+    "static/css/main.bf3ec131.chunk.css.map": "/feelingBored/static/css/main.bf3ec131.chunk.css.map",
     "static/js/2.c2fc9749.chunk.js.LICENSE.txt": "/feelingBored/static/js/2.c2fc9749.chunk.js.LICENSE.txt",
     "static/media/favorite_active.6f55a717.png": "/feelingBored/static/media/favorite_active.6f55a717.png",
     "static/media/favorite_inactive.190d870d.png": "/feelingBored/static/media/favorite_inactive.190d870d.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.a4b910e1.js",
     "static/js/2.c2fc9749.chunk.js",
-    "static/css/main.6156c797.chunk.css",
-    "static/js/main.4f524154.chunk.js"
+    "static/css/main.bf3ec131.chunk.css",
+    "static/js/main.a8adf776.chunk.js"
   ]
 }
