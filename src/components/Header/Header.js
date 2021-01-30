@@ -11,7 +11,7 @@ export const Header = ({ isViewFavoritesActive, setIsViewFavoritesActive, setIsA
   }
 
   const handleHomeButtonClick = () => {
-    setIsViewFavoritesActive(false)
+    window.location.reload()
   }
 
   return(
