@@ -77,7 +77,6 @@ export const ActivityCard = ({ currentActivity, setActivity, isAboutInfoActive, 
                 <StyledActivityInfo>Activity Type: {favoriteItem.type === 'diy' ? `${favoriteItem.type.toUpperCase().split('').join('.')}.` : favoriteItem.type}</StyledActivityInfo>
                 <StyledActivityInfo>Participants: {favoriteItem.participants}</StyledActivityInfo>
                 {favoriteItem.link ? <StyledActivityInfo>Link: <StyledLink href={favoriteItem.link}>{favoriteItem.link}</StyledLink></StyledActivityInfo> : null}
-                <NewActivityForm setActivity={setActivity} currentActivity={currentActivity} setIsFavorite={setIsFavorite} />
               </StyledCard>
             </StyledCardWrapper>
           )
