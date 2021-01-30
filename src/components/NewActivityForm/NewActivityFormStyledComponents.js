@@ -28,7 +28,7 @@ export const StyledButton = styled.button`
   display: flex;
   font-size: 110%;
   font-weight: 700;
-  height: 45px;
+  height: 50px;
   justify-content: center;
   margin: 15px;
   padding: 13px;
@@ -38,8 +38,11 @@ export const StyledButton = styled.button`
   &:hover {
     box-shadow: 0 8px 26px 0 #000;
     font-size: 130%;
-    height: 55px;
   }
+`
+
+export const StyledFormElementWrapper = styled.div`
+
 `
 
 export const StyledDropdown = styled.select`
@@ -48,7 +51,7 @@ export const StyledDropdown = styled.select`
   box-shadow: 0 4px 13px 0 #000;
   font-size: 110%;
   font-weight: 700;
-  height: 45px;
+  height: 50px;
   margin: 15px;
   padding: 1%;
   width: 40%;
@@ -56,6 +59,5 @@ export const StyledDropdown = styled.select`
   &:hover {
     box-shadow: 0 8px 26px 0 #000;
     font-size: 120%;
-    height: 55px;
   }
 `
